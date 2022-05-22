@@ -1253,6 +1253,7 @@ namespace ITR
                         Color color = Color.FromArgb(Convert.ToInt32(colorString[0]), Convert.ToInt32(colorString[1]), Convert.ToInt32(colorString[2]));
                         using ImageProcessor.ImageFactory imageFactory = new();
                         imageFactory.Load(texture);
+                        imageFactory.Format(new ImageProcessor.Imaging.Formats.PngFormat());
                         imageFactory.ReplaceColor(Color.FromArgb(198, 92, 53), color, 64);
                         imageFactory.Brightness(-13);
                         MemoryStream memS = new(420);

@@ -2,14 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Authors>Marcin Walczyk (marcinwal9@gmail.com)</Authors>
-    <Copyright>Marcin Walczyk (marcinwal9@gmail.com)</Copyright>
+    <Authors>Marcin Walczyk</Authors>
+    <Copyright>Marcin Walczyk</Copyright>
     <Description>ItemTextureResolver - used to resolve HyPixel ID to item Texture optionally Bukkit material Texture</Description>
-    <Company>Marcin Walczyk (marcinwal9@gmail.com)</Company>
+    <Company></Company>
     <ApplicationIcon />
     <Win32Resource />
     <Platforms>AnyCPU;x86;x64</Platforms>
-    <Version>1.5</Version>
+    <Version>1.5.1</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/AlvaroBajceps/ITR</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/AlvaroBajceps/ITR</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -57,6 +61,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
