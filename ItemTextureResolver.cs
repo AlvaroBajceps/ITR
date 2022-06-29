@@ -690,6 +690,12 @@ namespace ITR
             }
         }
 
+        public void MakeSafeToQuit()
+        {
+            skullDownloadQueue.Clear();
+            downloader.Join(10000);
+        }
+
         private void CacheAppend(string entry, Span<Byte> data)
         {
             if (noFileCache) return;
