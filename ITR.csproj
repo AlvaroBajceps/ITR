@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Authors>Marcin Walczyk</Authors>
     <Copyright>Marcin Walczyk</Copyright>
     <Description>ItemTextureResolver - used to resolve HyPixel ID to item Texture optionally Bukkit material Texture</Description>
@@ -9,7 +9,7 @@
     <ApplicationIcon />
     <Win32Resource />
     <Platforms>AnyCPU;x86;x64</Platforms>
-    <Version>1.5.1</Version>
+    <Version>1.5.2</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/AlvaroBajceps/ITR</RepositoryUrl>
     <PackageProjectUrl>https://github.com/AlvaroBajceps/ITR</PackageProjectUrl>

@@ -694,7 +694,10 @@ namespace ITR
         {
             if (noFileCache) return;
 
-            using var cacheFileStream = new FileStream(pathToCacheFile, FileMode.OpenOrCreate);
+            Directory.CreateDirectory(Path.GetDirectoryName(pathToCacheFile));
+            using var cacheFileStream = new FileStream(pathToCacheFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+
+
             using ZipArchive cacheArchive = new(cacheFileStream, ZipArchiveMode.Update, true);
 
             var zipEntry = cacheArchive.CreateEntry(entry).Open();
