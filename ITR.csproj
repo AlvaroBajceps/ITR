@@ -9,11 +9,13 @@
     <ApplicationIcon />
     <Win32Resource />
     <Platforms>AnyCPU;x86;x64</Platforms>
-    <Version>1.5.2</Version>
+    <Version>1.5.3</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/AlvaroBajceps/ITR</RepositoryUrl>
     <PackageProjectUrl>https://github.com/AlvaroBajceps/ITR</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>ITRKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

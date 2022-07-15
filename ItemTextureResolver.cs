@@ -626,7 +626,15 @@ namespace ITR
         /// </summary>
         public bool Initialized { get => _initialized; }
 
-        readonly System.Threading.Thread downloader;
+        System.Threading.Thread downloader;
+
+        public delegate void DownloadedItemHandler(ItemTextureResolver source, Item itemUpdated);
+        public event DownloadedItemHandler DownloadedItemEvent;
+
+        private void OnDownloadedItem(Item item)
+        {
+            DownloadedItemEvent?.Invoke(this, item);
+        }
 
         /// <summary>
         /// New ItemTextureResolver with own resources<br/>
@@ -687,6 +695,9 @@ namespace ITR
                 var memStream = new MemoryStream(2022);
                 cit.Texture.Save(memStream, System.Drawing.Imaging.ImageFormat.Png);
                 CacheAppend($"Skins/[{item.material}]{cit.HyPixel_ID}.png", memStream.ToArray());
+                var itemClass = GetItemFromID(item.id);
+                if (itemClass == null) throw new Exception("Unexpected error: Texture was downloaded for item that appear to not exist. REPORT THIS! addicional info:" + item.id);
+                OnDownloadedItem(itemClass);
             }
         }
 
@@ -1241,6 +1252,8 @@ namespace ITR
                             if (!isAlready) skullDownloadQueue.Enqueue(hyItemsDict[hyPixel_ID]);
                             if (!downloader.IsAlive)
                             {
+                                downloader = new(SkullDownloader);
+                                downloader.IsBackground = true;
                                 downloader.Start();
                             }
 
